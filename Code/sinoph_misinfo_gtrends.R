@@ -1,3 +1,7 @@
+# install.packages("tidyverse")
+# install.packages("tidyr")
+# install.packages("ggrepel")
+
 library(tidyverse)
 library(tidyr)
 library(ggrepel)

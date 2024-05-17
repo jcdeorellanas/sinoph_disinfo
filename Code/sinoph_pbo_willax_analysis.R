@@ -1,3 +1,9 @@
+# install.packages("tidyverse")
+# install.packages("pacman")
+# install.packages("lubridate")
+# install.packages("scale")
+# install.packages("jsonlite")
+
 library(jsonlite)
 library(tidyverse)
 library(pacman)
@@ -33,7 +39,7 @@ library(scales)
 # programs were aired and keep the title column only with the video titles
 
 # Load data
-file_path <- rio::import("/PATH_TO/DATA.json")
+file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
 
 # Create df. Data preprocess and cleaning
 video_data <- file_path |>

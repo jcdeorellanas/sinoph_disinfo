@@ -1,0 +1,114 @@
+{
+    "willaxtv": [
+        {
+            "playlist_name": "Willax En Vivo",
+            "playlist_id": "PLyz-UXBdXZFToq1K06dCMPmo_fcwVAYKo",
+            "playlist_publish_date": 1667724353.0,
+            "playlist_n_videos": 48,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.366461"
+        },
+        {
+            "playlist_name": "Combutters",
+            "playlist_id": "PLyz-UXBdXZFSkgwfK1wdaNcFC4fud6YWA",
+            "playlist_publish_date": 1628802853.0,
+            "playlist_n_videos": 2718,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.366764"
+        },
+        {
+            "playlist_name": "Beto a Saber",
+            "playlist_id": "PLyz-UXBdXZFTxL1ABdLV9JnW_HXJsoT8m",
+            "playlist_publish_date": 1603784283.0,
+            "playlist_n_videos": 3091,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.367048"
+        },
+        {
+            "playlist_name": "Milagros Leiva Entrevista",
+            "playlist_id": "PLyz-UXBdXZFQ9hfXOWMGjY0OlV5xQSHrg",
+            "playlist_publish_date": 1578424173.0,
+            "playlist_n_videos": 4387,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.533451"
+        },
+        {
+            "playlist_name": "Combutters: 2017 - 2021",
+            "playlist_id": "PLyz-UXBdXZFT8Pd3rTLb95W3n1lIn-ckD",
+            "playlist_publish_date": 1491340438.0,
+            "playlist_n_videos": 4935,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.534289"
+        },
+        {
+            "playlist_name": "Rey con Barba",
+            "playlist_id": "PLyz-UXBdXZFQs60qquqJyBoHlAPydZcnw",
+            "playlist_publish_date": 1399493946.0,
+            "playlist_n_videos": 2657,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.535385"
+        },
+        {
+            "playlist_name": "Rey con Barba: 2012 - 2014",
+            "playlist_id": "PLF059BD623156C76F",
+            "playlist_publish_date": 1328043602.0,
+            "playlist_n_videos": 1899,
+            "channel_id": "UCort3mldTtMErPqprSlSfng",
+            "channel_name": "Willax Televisi\u00f3n",
+            "collection_date": "2024-03-28T18:46:18.679617"
+        }
+    ],
+    "PBO": [
+        {
+            "playlist_name": "PBO con Augusto Thorndike",
+            "playlist_id": "PLDP78rkJ10RUYKRLiBJiHXzFb-vOB5RPP",
+            "playlist_publish_date": 1693815592.0,
+            "playlist_n_videos": 39,
+            "channel_id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+            "channel_name": "PBO",
+            "collection_date": "2024-03-28T18:46:18.827205"
+        },
+        {
+            "playlist_name": "PBO RADIO: Phillip Butters y Ricardo Belmont",
+            "playlist_id": "PLDP78rkJ10RV-mlal9WCnV9qnU3z8N7DD",
+            "playlist_publish_date": 1670117598.0,
+            "playlist_n_videos": 18,
+            "channel_id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+            "channel_name": "PBO",
+            "collection_date": "2024-03-28T18:46:18.827666"
+        },
+        {
+            "playlist_name": "Combutters",
+            "playlist_id": "PLDP78rkJ10RVZVPxERplej8P97AMZhZ1u",
+            "playlist_publish_date": 1588368832.0,
+            "playlist_n_videos": 1,
+            "channel_id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+            "channel_name": "PBO",
+            "collection_date": "2024-03-28T18:46:18.965346"
+        },
+        {
+            "playlist_name": "Phillip Butters en vivo",
+            "playlist_id": "PLDP78rkJ10RVft0RVz1Npaw5xN4wvaWAN",
+            "playlist_publish_date": 1542785597.0,
+            "playlist_n_videos": 516,
+            "channel_id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+            "channel_name": "PBO",
+            "collection_date": "2024-03-28T18:46:18.966004"
+        },
+        {
+            "playlist_name": "Phillip Butters",
+            "playlist_id": "PLDP78rkJ10RUF3igKjzWttFfjnMvCwHv7",
+            "playlist_publish_date": 1534936919.0,
+            "playlist_n_videos": 3921,
+            "channel_id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+            "channel_name": "PBO",
+            "collection_date": "2024-03-28T18:46:18.966149"
+        }
+    ]
+}
