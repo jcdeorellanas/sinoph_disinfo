@@ -41,9 +41,6 @@ library(scales)
 # Load data
 file_path <- rio::import("data/rpp_sinopharm/rpp_sinoph_efectividad2.json")
 
-View(file_path)
-colnames(file_path)
-
 # Create df. Data preprocess and cleaning
 video_data <- file_path |>
   mutate(video_publish_date = as_date(as_datetime(video_publish_date, origin = "1970-01-01"))) |>
@@ -61,7 +58,7 @@ video_data <- file_path |>
 summary(video_data)
 
 # Create a .csv file with the dataframe
-#write.csv(video_data, "data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo.csv", row.names = FALSE)
+#write.csv(video_data, "data/rpp_sinopharm/sinoph_efectiv_rpp.csv", row.names = FALSE)
 
 
 ### Data frame and table organizing the videos by views 
