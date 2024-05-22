@@ -1,0 +1,749 @@
+{
+    "@DiarioPeru21": {
+        "kind": "youtube#channelListResponse",
+        "etag": "gqIRkzWT5BlLTdN9XVBWgWuitmo",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "E-dvj5TonzqXxS-IJqQ2m1qv76U",
+                "id": "UCNd09h2GugrdeT_80LxOFMw",
+                "snippet": {
+                    "title": "Peru21TV",
+                    "description": "Per\u00fa21 es un medio de comunicaci\u00f3n que informa sobre los acontecimientos pol\u00edticos, econ\u00f3micos,  locales, culturales, espect\u00e1culos y deportes en el Per\u00fa y en el mundo.",
+                    "customUrl": "@diarioperu21",
+                    "publishedAt": "2008-11-27T16:52:17Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/-AFT3PtZYnxGzXZNRlQLjDnCIO1aRX2iqkuf-YCrZt5kWNEo5eFxy8XjB6p0gGLzyqRHN9yNkA=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/-AFT3PtZYnxGzXZNRlQLjDnCIO1aRX2iqkuf-YCrZt5kWNEo5eFxy8XjB6p0gGLzyqRHN9yNkA=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/-AFT3PtZYnxGzXZNRlQLjDnCIO1aRX2iqkuf-YCrZt5kWNEo5eFxy8XjB6p0gGLzyqRHN9yNkA=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "defaultLanguage": "es-419",
+                    "localized": {
+                        "title": "Peru21TV",
+                        "description": "Per\u00fa21 es un medio de comunicaci\u00f3n que informa sobre los acontecimientos pol\u00edticos, econ\u00f3micos,  locales, culturales, espect\u00e1culos y deportes en el Per\u00fa y en el mundo."
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUNd09h2GugrdeT_80LxOFMw"
+                    }
+                }
+            }
+        ]
+    },
+    "@Wayka": {
+        "kind": "youtube#channelListResponse",
+        "etag": "wBgB0GNrj1xejh-uWevUlAIwXN8",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "fQYwvibT3oBYHa5a92lz7ZMHHxA",
+                "id": "UCQmo59tWId4OHTdl4W320DQ",
+                "snippet": {
+                    "title": "Wayka",
+                    "description": "Wayka es medio comunitario sin fines de lucro conformado por periodistas y profesionales de diversas especialidades unidos frente a la necesidad de contar con medios de comunicaci\u00f3n comprometidos con la democracia participativa, los derechos humanos y laborales,  la igualdad de g\u00e9nero y la no discriminaci\u00f3n, las pol\u00edticas p\u00fablicas sostenibles, las comunidades ind\u00edgenas y medio ambiente, la lucha contra la corrupci\u00f3n, el bien com\u00fan y la promoci\u00f3n de cultura peruana. \n\nSomos independientes de las \u00e9lites econ\u00f3micas y pol\u00edticas, y buscamos contrapesar la cada vez mayor concentraci\u00f3n de medios privados que afectan el derecho de los ciudadanos a informarse libre y pluralmente. \n\nNo creemos que exista ni sea posible la imparcialidad o neutralidad en el periodismo, en cambio s\u00ed creemos en su necesario compromiso cr\u00edtico, \u00e9tico y solidario con la b\u00fasqueda de la verdad y de la justicia social, empleando para ello la mayor rigurosidad posible.\n",
+                    "customUrl": "@wayka",
+                    "publishedAt": "2014-01-18T21:20:09Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_m-sMbF4RKrJgk__TgJc3bHGuDwHc9zFsffr9-JnYd8b4k=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_m-sMbF4RKrJgk__TgJc3bHGuDwHc9zFsffr9-JnYd8b4k=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_m-sMbF4RKrJgk__TgJc3bHGuDwHc9zFsffr9-JnYd8b4k=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "Wayka",
+                        "description": "Wayka es medio comunitario sin fines de lucro conformado por periodistas y profesionales de diversas especialidades unidos frente a la necesidad de contar con medios de comunicaci\u00f3n comprometidos con la democracia participativa, los derechos humanos y laborales,  la igualdad de g\u00e9nero y la no discriminaci\u00f3n, las pol\u00edticas p\u00fablicas sostenibles, las comunidades ind\u00edgenas y medio ambiente, la lucha contra la corrupci\u00f3n, el bien com\u00fan y la promoci\u00f3n de cultura peruana. \n\nSomos independientes de las \u00e9lites econ\u00f3micas y pol\u00edticas, y buscamos contrapesar la cada vez mayor concentraci\u00f3n de medios privados que afectan el derecho de los ciudadanos a informarse libre y pluralmente. \n\nNo creemos que exista ni sea posible la imparcialidad o neutralidad en el periodismo, en cambio s\u00ed creemos en su necesario compromiso cr\u00edtico, \u00e9tico y solidario con la b\u00fasqueda de la verdad y de la justicia social, empleando para ello la mayor rigurosidad posible.\n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUQmo59tWId4OHTdl4W320DQ"
+                    }
+                }
+            }
+        ]
+    },
+    "@MinsaPeruSalud": {
+        "kind": "youtube#channelListResponse",
+        "etag": "g92yMp8uDIDoapC5fnnsj5SgRjk",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "2G0Kub30WQe5AZmc_poxZKnnE-0",
+                "id": "UCpR7spJxkXzqAI9aBr7Xacw",
+                "snippet": {
+                    "title": "Minsa Peru",
+                    "description": "Tenemos la misi\u00f3n de proteger la dignidad personal, promoviendo la salud, previniendo las enfermedades y garantizando la atenci\u00f3n integral de salud de todos los habitantes del pa\u00eds; proponiendo y conduciendo los lineamientos de pol\u00edticas sanitarias en concertaci\u00f3n con todos los sectores p\u00fablicos y los actores sociales.",
+                    "customUrl": "@minsaperusalud",
+                    "publishedAt": "2009-11-30T15:45:31Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/zp-Y4m4xrXnrr4NDkmkmbcciOHhaUbJ2SfyZjATnv4u50yXxp7C1J4IV4IuxqSC0nrsUgAmewQ=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/zp-Y4m4xrXnrr4NDkmkmbcciOHhaUbJ2SfyZjATnv4u50yXxp7C1J4IV4IuxqSC0nrsUgAmewQ=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/zp-Y4m4xrXnrr4NDkmkmbcciOHhaUbJ2SfyZjATnv4u50yXxp7C1J4IV4IuxqSC0nrsUgAmewQ=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "Minsa Peru",
+                        "description": "Tenemos la misi\u00f3n de proteger la dignidad personal, promoviendo la salud, previniendo las enfermedades y garantizando la atenci\u00f3n integral de salud de todos los habitantes del pa\u00eds; proponiendo y conduciendo los lineamientos de pol\u00edticas sanitarias en concertaci\u00f3n con todos los sectores p\u00fablicos y los actores sociales."
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUpR7spJxkXzqAI9aBr7Xacw"
+                    }
+                }
+            }
+        ]
+    },
+    "@LaRepublica": {
+        "kind": "youtube#channelListResponse",
+        "etag": "BVce49bm7i-J-J6uBlyngplW6aI",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "woXWLnHJ5O9ujs3LEyeZt615kYQ",
+                "id": "UC-B7Xv56uNRDkj0vC3QW8Cg",
+                "snippet": {
+                    "title": "La Rep\u00fablica - LR+",
+                    "description": "\u00a1Somos el canal oficial del diario La Rep\u00fablica!\nTe informamos lo que sucede en Per\u00fa y el mundo \ud83c\udf0d con programas de potente contenido period\u00edstico y de entretenimiento, que llevan el ADN del diario La Rep\u00fablica.\n",
+                    "customUrl": "@larepublica",
+                    "publishedAt": "2011-09-01T12:45:20Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/l7U71XWV9dUO7AxHnZLd5RBw_2iV4jVXjNE1dDQPZOzPHDxKMxieMtoO7-JpuHoDRa5KOPOP=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/l7U71XWV9dUO7AxHnZLd5RBw_2iV4jVXjNE1dDQPZOzPHDxKMxieMtoO7-JpuHoDRa5KOPOP=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/l7U71XWV9dUO7AxHnZLd5RBw_2iV4jVXjNE1dDQPZOzPHDxKMxieMtoO7-JpuHoDRa5KOPOP=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "defaultLanguage": "es-419",
+                    "localized": {
+                        "title": "La Rep\u00fablica - LR+",
+                        "description": "\u00a1Somos el canal oficial del diario La Rep\u00fablica!\nTe informamos lo que sucede en Per\u00fa y el mundo \ud83c\udf0d con programas de potente contenido period\u00edstico y de entretenimiento, que llevan el ADN del diario La Rep\u00fablica.\n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UU-B7Xv56uNRDkj0vC3QW8Cg"
+                    }
+                }
+            }
+        ]
+    },
+    "@latinanoticias": {
+        "kind": "youtube#channelListResponse",
+        "etag": "aKtg1gB4RNmBsLF7ScjvWa1By10",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "JkYj1Hygf65DUfRNgDfIl8ntO8I",
+                "id": "UCpSJ5fGhmAME9Kx2D3ZvN3Q",
+                "snippet": {
+                    "title": "Latina Noticias",
+                    "description": "Latina Noticias tiene lo que debes saber del Per\u00fa, Latinoam\u00e9rica y el mundo las 24 horas del d\u00eda con nuestra se\u00f1al en vivo (streaming). Lo m\u00e1s importante e interesante est\u00e1 aqu\u00ed, no busques en otro sitio. Contenido verificado, interesante e importante.\n",
+                    "customUrl": "@latinanoticias",
+                    "publishedAt": "2014-03-27T15:41:45Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/7-sp3QTtY82GtdVEX13-wwo6Ns9P8Puue4wTR3Ce1UQlhgFPxZdZfjMhh3aL43umGe5FSotD=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/7-sp3QTtY82GtdVEX13-wwo6Ns9P8Puue4wTR3Ce1UQlhgFPxZdZfjMhh3aL43umGe5FSotD=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/7-sp3QTtY82GtdVEX13-wwo6Ns9P8Puue4wTR3Ce1UQlhgFPxZdZfjMhh3aL43umGe5FSotD=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "Latina Noticias",
+                        "description": "Latina Noticias tiene lo que debes saber del Per\u00fa, Latinoam\u00e9rica y el mundo las 24 horas del d\u00eda con nuestra se\u00f1al en vivo (streaming). Lo m\u00e1s importante e interesante est\u00e1 aqu\u00ed, no busques en otro sitio. Contenido verificado, interesante e importante.\n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUpSJ5fGhmAME9Kx2D3ZvN3Q"
+                    }
+                }
+            }
+        ]
+    },
+    "@RPPNoticias": {
+        "kind": "youtube#channelListResponse",
+        "etag": "mb0P17x7OiqxesDQXD0JfEgOjO4",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "uPbB5cdvNpJDHfqVb-dXdoA75UY",
+                "id": "UC5j8-2FT0ZMMBkmK72R4aeA",
+                "snippet": {
+                    "title": "RPP Noticias",
+                    "description": "Somos el canal oficial de YouTube de RPP, la voz de todo el Per\u00fa.\n\n\u00bfTe interesan las noticias y todo lo que ocurre en el Per\u00fa y el mundo? Aqu\u00ed encontrar\u00e1s nuestros programas, entrevistas y segmentos de la radio, la televisi\u00f3n, y nuestros productos nativos para este portal de videos.\n\nTenemos 'Ampliaci\u00f3n de noticias', 'La rotativa del aire', 'Las cosas como son' y 'Nunca es tarde'.\n\nPara las m\u00e1s recientes noticias o an\u00e1lisis, visita nuestra p\u00e1gina web rpp.pe o descarga nuestras apps en Android o iOS.\n",
+                    "customUrl": "@rppnoticias",
+                    "publishedAt": "2007-09-07T23:39:31Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/graoS9AnwfgPyUuT4QQ1-jpJi4uewi_oYobnk5ygwLh9rtL7SN5EttjdWMG4yfeGLVn5rfn2fw=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/graoS9AnwfgPyUuT4QQ1-jpJi4uewi_oYobnk5ygwLh9rtL7SN5EttjdWMG4yfeGLVn5rfn2fw=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/graoS9AnwfgPyUuT4QQ1-jpJi4uewi_oYobnk5ygwLh9rtL7SN5EttjdWMG4yfeGLVn5rfn2fw=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "RPP Noticias",
+                        "description": "Somos el canal oficial de YouTube de RPP, la voz de todo el Per\u00fa.\n\n\u00bfTe interesan las noticias y todo lo que ocurre en el Per\u00fa y el mundo? Aqu\u00ed encontrar\u00e1s nuestros programas, entrevistas y segmentos de la radio, la televisi\u00f3n, y nuestros productos nativos para este portal de videos.\n\nTenemos 'Ampliaci\u00f3n de noticias', 'La rotativa del aire', 'Las cosas como son' y 'Nunca es tarde'.\n\nPara las m\u00e1s recientes noticias o an\u00e1lisis, visita nuestra p\u00e1gina web rpp.pe o descarga nuestras apps en Android o iOS.\n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UU5j8-2FT0ZMMBkmK72R4aeA"
+                    }
+                }
+            }
+        ]
+    },
+    "@cnnee": {
+        "kind": "youtube#channelListResponse",
+        "etag": "DJ0P1_d-TTDny5F5DtNkt1jMpV4",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "9Ua_DsR9i73jlbW29DF6NvtwZv4",
+                "id": "UC_lEiu6917IJz03TnntWUaQ",
+                "snippet": {
+                    "title": "CNN en Espa\u00f1ol",
+                    "description": "CNN en Espa\u00f1ol es tu principal fuente de informaci\u00f3n y breaking news. Cubrimos las noticias de Am\u00e9rica Latina y el resto del mundo. Vive la noticia.\n\n",
+                    "customUrl": "@cnnee",
+                    "publishedAt": "2013-09-25T17:34:22Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/djwWKmuUYiiAjieaCHRncxbU0wyWYZidq0umQdnjekB1pA3bC645oUUMe4QHIFjt-lMM_xvvyg=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/djwWKmuUYiiAjieaCHRncxbU0wyWYZidq0umQdnjekB1pA3bC645oUUMe4QHIFjt-lMM_xvvyg=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/djwWKmuUYiiAjieaCHRncxbU0wyWYZidq0umQdnjekB1pA3bC645oUUMe4QHIFjt-lMM_xvvyg=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "CNN en Espa\u00f1ol",
+                        "description": "CNN en Espa\u00f1ol es tu principal fuente de informaci\u00f3n y breaking news. Cubrimos las noticias de Am\u00e9rica Latina y el resto del mundo. Vive la noticia.\n\n"
+                    },
+                    "country": "US"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UU_lEiu6917IJz03TnntWUaQ"
+                    }
+                }
+            }
+        ]
+    },
+    "@PBO": {
+        "kind": "youtube#channelListResponse",
+        "etag": "U454N5hDxuoTSqCmU8HNBhWQAtE",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "lpqE3FSgiBD8-AQ_ajA_AVdWOx4",
+                "id": "UCgR0st4ZLABi-LQcWNu3wnQ",
+                "snippet": {
+                    "title": "PBO",
+                    "description": "Canal digital dirigido a varias tem\u00e1ticas de la actualidad.\nPBO es el primer canal multi-plataforma de Per\u00fa. Fundado en el 2016 por Phillip Butters, PBO te trae lo \u00faltimo en informaci\u00f3n, comentarios pol\u00edticos, tecnolog\u00eda, salud, deporte y entretenimiento.\n\nS\u00edguenos en Facebook: https://www.facebook.com/PBOPeru\n\nS\u00edguenos en Twitter: https://twitter.com/PBOPeru\n\nIngresa a nuestro portal: https://pboradio.com/\n#PBO #lima #noticias #peru #politica #politica #claudiatoro #willax #radio #christmas #navidad #navidad2022 #envivo #urgente #noticia #phillipbutters #butters #lima #politicalnews #news #pbodigital #deporte #salud \n",
+                    "customUrl": "@pbo",
+                    "publishedAt": "2018-08-16T15:16:23Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/o4-R578DS3IOc6CCuEe_DQwA3yW93Ir4DQhMZF1L6lzSB7RlDXL1nYnZmoBCA9LBdr1ZaBrNdw=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/o4-R578DS3IOc6CCuEe_DQwA3yW93Ir4DQhMZF1L6lzSB7RlDXL1nYnZmoBCA9LBdr1ZaBrNdw=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/o4-R578DS3IOc6CCuEe_DQwA3yW93Ir4DQhMZF1L6lzSB7RlDXL1nYnZmoBCA9LBdr1ZaBrNdw=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "PBO",
+                        "description": "Canal digital dirigido a varias tem\u00e1ticas de la actualidad.\nPBO es el primer canal multi-plataforma de Per\u00fa. Fundado en el 2016 por Phillip Butters, PBO te trae lo \u00faltimo en informaci\u00f3n, comentarios pol\u00edticos, tecnolog\u00eda, salud, deporte y entretenimiento.\n\nS\u00edguenos en Facebook: https://www.facebook.com/PBOPeru\n\nS\u00edguenos en Twitter: https://twitter.com/PBOPeru\n\nIngresa a nuestro portal: https://pboradio.com/\n#PBO #lima #noticias #peru #politica #politica #claudiatoro #willax #radio #christmas #navidad #navidad2022 #envivo #urgente #noticia #phillipbutters #butters #lima #politicalnews #news #pbodigital #deporte #salud \n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUgR0st4ZLABi-LQcWNu3wnQ"
+                    }
+                }
+            }
+        ]
+    },
+    "@24horasperu": {
+        "kind": "youtube#channelListResponse",
+        "etag": "uGEDhvnGNYpoZM-0w8MghWIVzk8",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "a9KDmwXr904vpg7LPi2wqXg72Rw",
+                "id": "UCsakKsRww3J7pM6DavkrAIQ",
+                "snippet": {
+                    "title": "24 Horas",
+                    "description": "24 Horas Edici\u00f3n Central, es el noticiero m\u00e1s antiguo emitido en nuestro pa\u00eds y el m\u00e1s longevo de Latinoam\u00e9rica. Hemos cumplido 50 a\u00f1os ininterrumpidos de labor informativa, actualmente Marisol Garc\u00eda se encuentra bajo la conducci\u00f3n del espacio period\u00edstico de lunes a viernes a las 8:30 p. m.\n\n\u201c2023 en 24 Horas\u201d, es un espacio period\u00edstico que ofrece el an\u00e1lisis en profundidad de las noticias del d\u00eda, primicias y entrevistas pol\u00edticas con los principales protagonistas de los hechos. Este programa que va en b\u00fasqueda de la verdad y sin censura. De lunes a viernes a las 10:00 p. m.\n\n24 Horas Edici\u00f3n Mediod\u00eda, es un informativo conducido por Paola Moreno y va dirigido a todo el p\u00fablico, que de alguna u otra manera busca formas de enterarse a diario de los principales hechos del acontecer nacional y mundial. De lunes a viernes a las 12:00 p. m.\n\n\n\n",
+                    "customUrl": "@24horasperu",
+                    "publishedAt": "2011-08-05T16:09:18Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/Lql5U9xcawSmCM2sVc0KVjZwdNkBMc7laQaah2u5NAG_ByqsYB0nwVz7QME2K3CnLFmdkxLBVQ=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/Lql5U9xcawSmCM2sVc0KVjZwdNkBMc7laQaah2u5NAG_ByqsYB0nwVz7QME2K3CnLFmdkxLBVQ=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/Lql5U9xcawSmCM2sVc0KVjZwdNkBMc7laQaah2u5NAG_ByqsYB0nwVz7QME2K3CnLFmdkxLBVQ=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "24 Horas",
+                        "description": "24 Horas Edici\u00f3n Central, es el noticiero m\u00e1s antiguo emitido en nuestro pa\u00eds y el m\u00e1s longevo de Latinoam\u00e9rica. Hemos cumplido 50 a\u00f1os ininterrumpidos de labor informativa, actualmente Marisol Garc\u00eda se encuentra bajo la conducci\u00f3n del espacio period\u00edstico de lunes a viernes a las 8:30 p. m.\n\n\u201c2023 en 24 Horas\u201d, es un espacio period\u00edstico que ofrece el an\u00e1lisis en profundidad de las noticias del d\u00eda, primicias y entrevistas pol\u00edticas con los principales protagonistas de los hechos. Este programa que va en b\u00fasqueda de la verdad y sin censura. De lunes a viernes a las 10:00 p. m.\n\n24 Horas Edici\u00f3n Mediod\u00eda, es un informativo conducido por Paola Moreno y va dirigido a todo el p\u00fablico, que de alguna u otra manera busca formas de enterarse a diario de los principales hechos del acontecer nacional y mundial. De lunes a viernes a las 12:00 p. m.\n\n\n\n"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUsakKsRww3J7pM6DavkrAIQ"
+                    }
+                }
+            }
+        ]
+    },
+    "@tvperunoticias": {
+        "kind": "youtube#channelListResponse",
+        "etag": "2tJneBPJ4DO4ZlovsSq6_q-ZHHA",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "EHRPI43JekEUXmHEiH4XfeitTkA",
+                "id": "UCkZCoc42IipR1ucqJmIehsA",
+                "snippet": {
+                    "title": "TVPer\u00fa Noticias",
+                    "description": "En TVPer\u00fa Noticias, el canal de todos los peruanos, te damos informaci\u00f3n actualizada sobre Per\u00fa, Latinoam\u00e9rica y el mundo, incluyendo noticias nacionales, deportivas, culturales, econ\u00f3micas, tecnol\u00f3gicas y cobertura de actividades oficiales de la presidenta Dina Boluarte y del premier Alberto Ot\u00e1rola y otros ministerios. Transmitimos programas en vivo a trav\u00e9s de nuestro streaming y somos el canal informativo del Instituto Nacional de Radio y Televisi\u00f3n del Per\u00fa (IRTP). #TVPer\u00faNoticias",
+                    "customUrl": "@tvperunoticias",
+                    "publishedAt": "2012-05-30T17:03:26Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/PrYs-3eX0dlRFCXkx0l6KDNoSnIYOWJODbPPBirJazm-0xtTv8AJZ1FajbvVVjv2dGKSJOgwOw=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/PrYs-3eX0dlRFCXkx0l6KDNoSnIYOWJODbPPBirJazm-0xtTv8AJZ1FajbvVVjv2dGKSJOgwOw=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/PrYs-3eX0dlRFCXkx0l6KDNoSnIYOWJODbPPBirJazm-0xtTv8AJZ1FajbvVVjv2dGKSJOgwOw=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "TVPer\u00fa Noticias",
+                        "description": "En TVPer\u00fa Noticias, el canal de todos los peruanos, te damos informaci\u00f3n actualizada sobre Per\u00fa, Latinoam\u00e9rica y el mundo, incluyendo noticias nacionales, deportivas, culturales, econ\u00f3micas, tecnol\u00f3gicas y cobertura de actividades oficiales de la presidenta Dina Boluarte y del premier Alberto Ot\u00e1rola y otros ministerios. Transmitimos programas en vivo a trav\u00e9s de nuestro streaming y somos el canal informativo del Instituto Nacional de Radio y Televisi\u00f3n del Per\u00fa (IRTP). #TVPer\u00faNoticias"
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUkZCoc42IipR1ucqJmIehsA"
+                    }
+                }
+            }
+        ]
+    },
+    "@PresidenciaPeru": {
+        "kind": "youtube#channelListResponse",
+        "etag": "lBNnz0PlDmoph6MQvSUsg5sMh8U",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "0Jkzc9rlNJI8cqqnW0k6M1gwin8",
+                "id": "UCtgAzE8TaeTB3Owqho52E3g",
+                "snippet": {
+                    "title": "Presidencia de la Rep\u00fablica del Per\u00fa",
+                    "description": "Bienvenidos a la p\u00e1gina de la Presidencia de la Rep\u00fablica del Per\u00fa. ",
+                    "customUrl": "@presidenciaperu",
+                    "publishedAt": "2011-07-31T20:03:22Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/6jmyND9qxHSVqDSQscUSu9ryNkA05_aPZIavGZqDb5f1UleKr6b5kCs8gIZyVJ2VXCCt9u2MkQ=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/6jmyND9qxHSVqDSQscUSu9ryNkA05_aPZIavGZqDb5f1UleKr6b5kCs8gIZyVJ2VXCCt9u2MkQ=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/6jmyND9qxHSVqDSQscUSu9ryNkA05_aPZIavGZqDb5f1UleKr6b5kCs8gIZyVJ2VXCCt9u2MkQ=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "Presidencia de la Rep\u00fablica del Per\u00fa",
+                        "description": "Bienvenidos a la p\u00e1gina de la Presidencia de la Rep\u00fablica del Per\u00fa. "
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUtgAzE8TaeTB3Owqho52E3g"
+                    }
+                }
+            }
+        ]
+    },
+    "@Latinape": {
+        "kind": "youtube#channelListResponse",
+        "etag": "Vym-tHbnHAplMtFOxo9CJ8tcWt0",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "l-fb5jH0hmOkP8b86koGaTQmIrs",
+                "id": "UC3rDtLrcgr3JS3_3JOW4BAw",
+                "snippet": {
+                    "title": "Latina Televisi\u00f3n",
+                    "description": "Latina Televisi\u00f3n es un canal peruano de televisi\u00f3n abierta que busca llevar a la audiencia contenidos de amplia variedad a trav\u00e9s de formatos que entretengan y convoquen a todos los miembros de la familia.",
+                    "customUrl": "@latinape",
+                    "publishedAt": "2013-06-08T12:22:02Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/Brh94gn82_uzy3hwYDmiJAmHskgWOYSp3Xi4EOsxm66-R9gpiy8TQW8s3n48z49k3cWJH-KYMw=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/Brh94gn82_uzy3hwYDmiJAmHskgWOYSp3Xi4EOsxm66-R9gpiy8TQW8s3n48z49k3cWJH-KYMw=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/Brh94gn82_uzy3hwYDmiJAmHskgWOYSp3Xi4EOsxm66-R9gpiy8TQW8s3n48z49k3cWJH-KYMw=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "localized": {
+                        "title": "Latina Televisi\u00f3n",
+                        "description": "Latina Televisi\u00f3n es un canal peruano de televisi\u00f3n abierta que busca llevar a la audiencia contenidos de amplia variedad a trav\u00e9s de formatos que entretengan y convoquen a todos los miembros de la familia."
+                    },
+                    "country": "US"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UU3rDtLrcgr3JS3_3JOW4BAw"
+                    }
+                }
+            }
+        ]
+    },
+    "@BBCMundo": {
+        "kind": "youtube#channelListResponse",
+        "etag": "LgKFjB4mM8qB4x7RprHijxys8vE",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "2-g67bA5DHO2op1ALS4_WvDUe6s",
+                "id": "UCUBIrDsIVzRpKsClMlSlTpQ",
+                "snippet": {
+                    "title": "BBC News Mundo",
+                    "description": "\u00a1Hola! Bienvenidos a BBC Mundo. Este es el canal oficial de YouTube de la BBC en espa\u00f1ol. Si te interesa la actualidad internacional y buscas una cobertura imparcial est\u00e1s en el mejor lugar. \n\nAqu\u00ed encontrar\u00e1s videos sobre noticias y temas de actualidad en distintos formatos, desde videos explicativos y documentales hasta entrevistas. \n\nPonemos atenci\u00f3n especial a temas de Am\u00e9rica Latina, Estados Unidos y Espa\u00f1a, pero tambi\u00e9n encontrar\u00e1s videos de ciencia, salud, lenguaje y sociedad. \n\nQueremos informarte y entretenerte pero tambi\u00e9n escucharte: puedes sugerir temas o decirnos qu\u00e9 te parece lo que hacemos participando en los comentarios o escribiendo en nuestra pesta\u00f1a Comunidad. \n\nGracias por visitarnos. \u00a1Nos vemos!",
+                    "customUrl": "@bbcmundo",
+                    "publishedAt": "2008-05-24T23:49:57Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_n0nJcDIinN0jS9yZw9MRrpB8LlY-GaZ_irrpocbpl0BZU=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_n0nJcDIinN0jS9yZw9MRrpB8LlY-GaZ_irrpocbpl0BZU=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_n0nJcDIinN0jS9yZw9MRrpB8LlY-GaZ_irrpocbpl0BZU=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "defaultLanguage": "es-419",
+                    "localized": {
+                        "title": "BBC News Mundo",
+                        "description": "\u00a1Hola! Bienvenidos a BBC Mundo. Este es el canal oficial de YouTube de la BBC en espa\u00f1ol. Si te interesa la actualidad internacional y buscas una cobertura imparcial est\u00e1s en el mejor lugar. \n\nAqu\u00ed encontrar\u00e1s videos sobre noticias y temas de actualidad en distintos formatos, desde videos explicativos y documentales hasta entrevistas. \n\nPonemos atenci\u00f3n especial a temas de Am\u00e9rica Latina, Estados Unidos y Espa\u00f1a, pero tambi\u00e9n encontrar\u00e1s videos de ciencia, salud, lenguaje y sociedad. \n\nQueremos informarte y entretenerte pero tambi\u00e9n escucharte: puedes sugerir temas o decirnos qu\u00e9 te parece lo que hacemos participando en los comentarios o escribiendo en nuestra pesta\u00f1a Comunidad. \n\nGracias por visitarnos. \u00a1Nos vemos!"
+                    },
+                    "country": "GB"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUUBIrDsIVzRpKsClMlSlTpQ"
+                    }
+                }
+            }
+        ]
+    },
+    "@afpes": {
+        "kind": "youtube#channelListResponse",
+        "etag": "Ck9r7Lzmr5vX7GyVmGyt4zZHggk",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "7bfW6UXRL6AaTu4mYh-0OGGBJcE",
+                "id": "UCY8d83kIW6sK4au73qeZZTw",
+                "snippet": {
+                    "title": "AFP Espa\u00f1ol",
+                    "description": "AFP es una agencia de noticias l\u00edder y global que brinda cobertura r\u00e1pida, completa y verificada de la actualidad, as\u00ed como de los temas que conforman nuestra vida cotidiana. Con una red incomparable de periodistas en 151 pa\u00edses, AFP es tambi\u00e9n l\u00edder mundial en verificaci\u00f3n digital. Nuestros 2.400 empleados, de 100 nacionalidades diferentes, cubren el mundo en seis idiomas, con una calidad \u00fanica de producci\u00f3n multimedia en videos, textos, fotograf\u00edas y gr\u00e1ficos.\n\n\u00bfDesea conocer m\u00e1s sobre la oferta de videos AFP u obtener una licencia de uso de un video visto en nuestro canal? Haga clic aqu\u00ed, por favor \ud83d\udc49 http://u.afp.com/wvnK \n\nAclaraci\u00f3n: Los servicios y contenidos de AFP son para uso exclusivamente profesional\n",
+                    "customUrl": "@afpes",
+                    "publishedAt": "2008-06-24T16:14:09Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_mzFiLwVCQwpySJx7KdiT2FSv6bssbAtb5HuiOovxUrfw=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_mzFiLwVCQwpySJx7KdiT2FSv6bssbAtb5HuiOovxUrfw=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_mzFiLwVCQwpySJx7KdiT2FSv6bssbAtb5HuiOovxUrfw=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "defaultLanguage": "es-419",
+                    "localized": {
+                        "title": "AFP Espa\u00f1ol",
+                        "description": "AFP es una agencia de noticias l\u00edder y global que brinda cobertura r\u00e1pida, completa y verificada de la actualidad, as\u00ed como de los temas que conforman nuestra vida cotidiana. Con una red incomparable de periodistas en 151 pa\u00edses, AFP es tambi\u00e9n l\u00edder mundial en verificaci\u00f3n digital. Nuestros 2.400 empleados, de 100 nacionalidades diferentes, cubren el mundo en seis idiomas, con una calidad \u00fanica de producci\u00f3n multimedia en videos, textos, fotograf\u00edas y gr\u00e1ficos.\n\n\u00bfDesea conocer m\u00e1s sobre la oferta de videos AFP u obtener una licencia de uso de un video visto en nuestro canal? Haga clic aqu\u00ed, por favor \ud83d\udc49 http://u.afp.com/wvnK \n\nAclaraci\u00f3n: Los servicios y contenidos de AFP son para uso exclusivamente profesional\n"
+                    }
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UUY8d83kIW6sK4au73qeZZTw"
+                    }
+                }
+            }
+        ]
+    },
+    "@DiarioElComercio": {
+        "kind": "youtube#channelListResponse",
+        "etag": "aqsFnQ0uTbwMMCpPZ12jeYOzSJs",
+        "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+        },
+        "items": [
+            {
+                "kind": "youtube#channel",
+                "etag": "Bkv3ZRZxFPjNGezSm3sfyGJdDe4",
+                "id": "UCLtGUPjKLqa3zgdmhKCZONg",
+                "snippet": {
+                    "title": "Diario El Comercio Videos",
+                    "description": "Bienvenidos al canal de YouTube de El Comercio, un lugar donde podemos conversar sobre el acontecer nacional y mundial, as\u00ed como conectarnos con nuestros seguidores. Ac\u00e1 encontrar\u00e1s documentales y reportajes sobre lo que ocurre en el Per\u00fa y mundo. \n\ud83d\udccc Suscr\u00edbete y activa la campana para estar al d\u00eda.",
+                    "customUrl": "@diarioelcomercio",
+                    "publishedAt": "2007-06-24T16:38:42Z",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_nDSB--KiWtaXY3xgVyJyALCo_D2IZpge4KjW5-umgDUp4=s88-c-k-c0x00ffffff-no-rj",
+                            "width": 88,
+                            "height": 88
+                        },
+                        "medium": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_nDSB--KiWtaXY3xgVyJyALCo_D2IZpge4KjW5-umgDUp4=s240-c-k-c0x00ffffff-no-rj",
+                            "width": 240,
+                            "height": 240
+                        },
+                        "high": {
+                            "url": "https://yt3.ggpht.com/ytc/AIdro_nDSB--KiWtaXY3xgVyJyALCo_D2IZpge4KjW5-umgDUp4=s800-c-k-c0x00ffffff-no-rj",
+                            "width": 800,
+                            "height": 800
+                        }
+                    },
+                    "defaultLanguage": "es-419",
+                    "localized": {
+                        "title": "Diario El Comercio Videos",
+                        "description": "Bienvenidos al canal de YouTube de El Comercio, un lugar donde podemos conversar sobre el acontecer nacional y mundial, as\u00ed como conectarnos con nuestros seguidores. Ac\u00e1 encontrar\u00e1s documentales y reportajes sobre lo que ocurre en el Per\u00fa y mundo. \n\ud83d\udccc Suscr\u00edbete y activa la campana para estar al d\u00eda."
+                    },
+                    "country": "PE"
+                },
+                "contentDetails": {
+                    "relatedPlaylists": {
+                        "likes": "",
+                        "uploads": "UULtGUPjKLqa3zgdmhKCZONg"
+                    }
+                }
+            }
+        ]
+    },
+    "Am\u00e9ricaNoticiasOficial": {
+        "kind": "youtube#channelListResponse",
+        "etag": "RuuXzTIr0OoDqI4S0RU6n4FqKEM",
+        "pageInfo": {
+            "totalResults": 0,
+            "resultsPerPage": 5
+        }
+    }
+}
