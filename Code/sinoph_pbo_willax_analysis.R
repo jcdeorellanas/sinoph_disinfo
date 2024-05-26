@@ -8,20 +8,22 @@ library(jsonlite)
 library(tidyverse)
 library(pacman)
 library(lubridate)
+library(stringr)
 library(scales)
+library(gt)
 
 # This code preprocess and cleans the data. It
 # 1. Opens json files containing dictionaries with video metadata downloaded
 #   from YouTube.
 # 2. Converts dates in UNIX format into regular `Date` format and counts from 
 #   `character` into numeric format.
-# 3. Creates the Program column and fills it with the program titles extracted from
+# 3. Creates the program column and fills it with the program titles extracted from
 #   the video_title data downloaded from the API. If video_title does not contain 
 #   the program name, it insters NA.
 # 4. Standardizes the programs' names and cleans the titles by extracting the program 
 #   name
 # 5. Creates a dataframe to analyze and visualize the data using ggplot
-# 6. Replaces NAs in the Program columns with the manually found show names 
+# 6. Replaces NAs in the program columns with the manually found show names 
 # 7. Creates a .csv file with the dataframe.
 
 # The code after takes the df created above and creates 3 scatter-plots. It 
@@ -42,46 +44,58 @@ library(scales)
 file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
 
 # Create df. Data preprocess and cleaning
-video_data <- file_path |>
-  mutate(publish_date = as_date(as_datetime(video_publish_date, origin = "1970-01-01"))) |>
-  # Replace 'FALSE' or any non-numeric values with 0
-  mutate(video_dislike_count = ifelse(!is.na(as.numeric(video_dislike_count)), as.numeric(video_dislike_count), 0)) |>
-  mutate(video_view_count = as.numeric(video_view_count)) |>
-  mutate(video_comment_count = as.numeric(video_comment_count))  |>
-  mutate(video_like_count = as.numeric(video_like_count)) |>
-  mutate(Program = if_else(
-    str_starts(video_title, "Ernesto"), 
-    NA_character_,  # If title starts with Ernesto, set to NA or keep the original
-    str_extract(video_title, "^[^:\\-]+(?=\\:|\\s?-\\s?)")  # Otherwise, extract the program name
-  )) |>
-  mutate(Program = str_replace_all(Program, 
-                                   c("MilagrosLeivaEntrevista" = "Milagros Leiva Entrevista", 
-                                     "Milagros LeivaEntrevista" = "Milagros Leiva Entrevista"))) |>
-  mutate(video_title = case_when(
-    str_detect(video_title, "^(Milagros)") ~ str_replace(video_title, ".*? - ", ""),
-    TRUE ~ video_title)) |>
-  mutate(video_title = case_when(
-    str_detect(video_title, "^(Combutters: )") ~ str_replace(video_title, "Combutters: ", ""),
-    TRUE ~ video_title
-  )) |>
-  mutate(video_title = case_when(
-    str_detect(video_title, "^(Beto a Saber|Combutters)") ~ str_replace(video_title, ".*? - ", ""), TRUE ~ video_title
-  )) |>
-  select(channel = channel_title, 
-         publish_date,
-         Program,
-         title = video_title,
-         #description= video_description,
-         views = video_view_count,
-         comments = video_comment_count,
-         likes = video_like_count,
-         dislikes = video_dislike_count) |>
-  arrange(publish_date)
-
-video_data[[3]][1] = "Milagros Leiva Entrevista"
-video_data[[3]][[3]] = "Beto a Saber"
-video_data[[3]][70] = "PBO"
-video_data[[3]][101] = "PBO"
+# video_data <- file_path |>
+#   mutate(video_publish_date = as_date(as_datetime(video_publish_date, origin = "1970-01-01"))) |>
+#   # Replace 'FALSE' or any non-numeric values with 0
+#   mutate(video_dislike_count = ifelse(!is.na(as.numeric(video_dislike_count)), as.numeric(video_dislike_count), 0)) |>
+#   mutate(video_view_count = as.numeric(video_view_count)) |>
+#   mutate(video_comment_count = as.numeric(video_comment_count))  |>
+#   mutate(video_like_count = as.numeric(video_like_count)) |>
+#   mutate(program = if_else(
+#     str_starts(video_title, "Ernesto"), 
+#     NA_character_,  # If title starts with Ernesto, set to NA or keep the original
+#     str_extract(video_title, "^[^:\\-]+(?=\\:|\\s?-\\s?)")  # Otherwise, extract the program name
+#   )) |>
+#   mutate(program = str_replace_all(program, 
+#                                    c("MilagrosLeivaEntrevista" = "Milagros Leiva Entrevista", 
+#                                      "Milagros LeivaEntrevista" = "Milagros Leiva Entrevista"))) |>
+#   mutate(video_title = case_when(
+#     str_detect(video_title, "^(Milagros)") ~ str_replace(video_title, ".*? - ", ""),
+#     TRUE ~ video_title)) |>
+#   mutate(video_title = case_when(
+#     str_detect(video_title, "^(Combutters: )") ~ str_replace(video_title, "Combutters: ", ""),
+#     TRUE ~ video_title
+#   )) |>
+#   mutate(video_title = case_when(
+#     str_detect(video_title, "^(Beto a Saber|Combutters)") ~ str_replace(video_title, ".*? - ", ""), TRUE ~ video_title
+#   )) |>
+#   mutate(program_date = str_extract(video_title, "(ENE|FEB|MAR|ABR|MAY|JUN|JUL|AGO|SEP|OCT|NOV|DIC)\\s?\\d{2}"), 
+#          str_remove_all(video_title, "(ENE|FEB|MAR|ABR|MAY|JUN|JUL|AGO|SEP|OCT|NOV|DIC)\\s?\\d{2}\\s?-\\s?")
+#          ) |>
+#   mutate(video_description = str_remove_all(video_description, "(facebook.com/willaxtv|twitter.com/willaxtv)")
+#          ) |>
+#   mutate(video_description = str_remove_all(video_description, 
+#                                             "Transmite en HD a través del canal 1.1 de señal abierta digital \\(TDT\\), MovistarTV C16 y 716HD, ClaroTV C12 y 512HD, DirecTV 1191HD, Best Cable C8 y más de 100 cableoperadores a nivel nacional\\.\\s*Consulta la programación de Willax Televisión aquí y conoce la hora de emisión de todos los programas de entretenimiento, novelas, programas y debates políticos: http://willax.tv/Programacion")
+#          ) |>
+#   select(video_id,
+#          channel_title,
+#          channel_id,
+#          video_publish_date,
+#          program,
+#          program_date,
+#          video_title,
+#          video_description,
+#          video_view_count,
+#          video_comment_count,
+#          video_like_count,
+#          video_dislike_count,
+#          video_tags)|>
+#   arrange(video_publish_date)
+# 
+# video_data[[5]][1] = "Milagros Leiva Entrevista"
+# video_data[[5]][[3]] = "Beto a Saber"
+# video_data[[5]][70] = "PBO"
+# video_data[[5]][101] = "PBO"
 
 # Commands to debug/check the resulting df
 # str(video_data)
@@ -89,15 +103,16 @@ video_data[[3]][101] = "PBO"
 # summary(video_data)
 
 # Create a .csv file with the dataframe
-#write.csv(video_data, "data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo.csv", row.names = FALSE)
+#write.csv(video_data, "data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo_long.csv", row.names = FALSE)
 
+video_data <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
 
 ### Data frame and table organizing the videos by views 
 views_df <- video_data |>
-  mutate(channel = str_replace_all(channel,
+  mutate(channel_title = str_replace_all(channel_title,
                                    "Willax Televisión", "Willax")) |>
-  select(-dislikes) |>
-  arrange(desc(views))
+  select(-c(video_id, channel_id, video_description, video_dislike_count, video_tags)) |>
+  arrange(desc(video_view_count))
 
 views_df_sliced <- views_df |>
   slice(1:12)
@@ -159,7 +174,7 @@ march_2021_table
 stat_summ_df <- summary(video_data) |>
   as.data.frame.matrix() |>
   as_tibble()|>
-  select(-c("  channel", "  Program"))
+  select(-c("  channel", "  program"))
 
 colnames(stat_summ_df) <- gsub("^\\s+", "", colnames(stat_summ_df))
 
@@ -185,7 +200,7 @@ gt_table <- stat_summ_df |>
 gt_table
 
 ### Plotting number of views by date and program
-video_data |> ggplot(aes(x = publish_date, y = views, color = Program, group = Program)) + 
+video_data |> ggplot(aes(x = publish_date, y = views, color = program, group = program)) + 
   geom_jitter() +
   labs(title = "Video View Count", x = "Date", y = "Views") +
   theme_minimal(base_size = 10) +
@@ -203,7 +218,7 @@ video_data |> ggplot(aes(x = publish_date, y = views, color = Program, group = P
   scale_y_continuous(labels = label_comma())  
 
 ### Plotting number of comments by date and program
-video_data |> ggplot(aes(x = publish_date, y = comments, color = Program, group = Program)) + 
+video_data |> ggplot(aes(x = publish_date, y = comments, color = program, group = program)) + 
   geom_jitter() +
   labs(title = "Video Comment Count", x = "Date", y = "Comments") +
   theme_minimal(base_size = 10) +
@@ -221,7 +236,7 @@ video_data |> ggplot(aes(x = publish_date, y = comments, color = Program, group 
   scale_y_continuous(labels = label_comma())  
 
 ### Plotting number of likes by date and program
-video_data |> ggplot(aes(x = publish_date, y = likes, color = Program, group = Program)) + 
+video_data |> ggplot(aes(x = publish_date, y = likes, color = program, group = program)) + 
   geom_jitter() +
   labs(title = "Video Like Count", x = "Date", y = "Likes") +
   theme_minimal(base_size = 10) +

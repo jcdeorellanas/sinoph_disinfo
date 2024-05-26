@@ -1,15 +1,3 @@
-# install.packages("tidyverse")
-# install.packages("pacman")
-# install.packages("lubridate")
-# install.packages("scale")
-# install.packages("jsonlite")
-
-library(jsonlite)
-library(tidyverse)
-library(pacman)
-library(lubridate)
-library(scales)
-
 # This code preprocess and cleans the data. It
 # 1. Opens json files containing dictionaries with video metadata downloaded
 #   from YouTube.
@@ -38,6 +26,14 @@ library(scales)
 # Keep parsing the vide_title metadata to extract the dates in which the 
 # programs were aired and keep the title column only with the video titles
 
+library(jsonlite)
+library(tidyverse)
+library(pacman)
+library(lubridate)
+library(scales)
+library(gt) 
+
+
 # Load data
 file_path <- rio::import("data/rpp_sinopharm/rpp_sinoph_efectividad2.json")
 
@@ -55,108 +51,119 @@ video_data <- file_path |>
 # Commands to debug/check the resulting df
 # str(video_data)
 # head(video_data)
-summary(video_data)
+#summary(video_data)
 
 # Create a .csv file with the dataframe
 #write.csv(video_data, "data/rpp_sinopharm/sinoph_efectiv_rpp.csv", row.names = FALSE)
 
 
+### Data frame and table selecting relevant columns and filtering videos by keywords
+rpp_eff_df <- rio::import("Data/rpp_sinopharm/sinoph_efectiv_rpp_revised.csv") |>
+  select(publish_date = video_publish_date, 
+         ID = video_id, 
+         Title = video_title, 
+         Description = video_description, 
+         Views = video_view_count, 
+         Likes = video_like_count, 
+         Comments = video_comment_count) |>
+  filter(str_detect(Title, regex(
+    "efectividad|eficiencia|eficacia|eficaces|efectivas|eficientes|eficaz|efectiva|eficiente|confianza", 
+    ignore_case = TRUE)) |
+           str_detect(Description, regex(
+             "efectividad|eficiencia|eficacia|eficaces|efectivas|eficientes|eficaz|efectiva|eficiente|confianza", 
+             ignore_case = TRUE)))
+
 ### Data frame and table organizing the videos by views 
-views_df <- video_data |>
-  mutate(channel = str_replace_all(channel,
-                                   "Willax Televisión", "Willax")) |>
-  select(-dislikes) |>
-  arrange(desc(views))
+views_df <- rpp_eff_df |>
+  rename(Publish_Date = publish_date) |>
+  select(-c(ID, Description)) |>
+  arrange(desc(Views))
 
-views_df_sliced <- views_df |>
-  slice(1:12)
+# views_df_sliced <- views_df |>
+#   slice(1:12)
 
-views_table_top <- views_df_sliced |>
-  mutate(publish_date = as.factor(publish_date)) |>
+views_table <- views_df |>
+  mutate(Publish_Date = as.factor(Publish_Date)) |>
   gt() |>
   tab_header(
     title = "Total of views per video (descending)"
   )|>
-  data_color(columns = c(publish_date, views),
+  data_color(columns = c(Views),
              direction = "column",
              target_columns = NULL,
              method = "auto",
-             bins = 4,
-             quantiles = 4,
+             bins = 5,
+             quantiles = 5,
              ordered = FALSE,
              reverse = TRUE)
-views_table_top
+views_table
 
-views_table_tail <- tail(views_df, n=12) |>
-  mutate(publish_date = as.factor(publish_date)) |>
-  gt() |>
-  tab_header(
-    title = "Total of views per video (tail)"
-  )|>
-  data_color(columns = c(publish_date, views),
-             direction = "column",
-             target_columns = NULL,
-             method = "auto",
-             bins = 4,
-             quantiles = 4,
-             ordered = FALSE,
-             reverse = FALSE)
-views_table_tail
+# views_table_tail <- tail(views_df, n=12) |>
+#   mutate(publish_date = as.factor(publish_date)) |>
+#   gt() |>
+#   tab_header(
+#     title = "Total of views per video (tail)"
+#   )|>
+#   data_color(columns = c(publish_date, views),
+#              direction = "column",
+#              target_columns = NULL,
+#              method = "auto",
+#              bins = 4,
+#              quantiles = 4,
+#              ordered = FALSE,
+#              reverse = FALSE)
+# views_table_tail
 
-### Data frame and table organizing the videos by date, focusing on March
-march_2021_videos <- video_data |>
-  filter(publish_date >= as_date("2021-03-01") & publish_date <= as_date("2021-03-31")) |> 
-  mutate(channel = str_replace_all(channel,
-                                   "Willax Televisión", "Willax")) |>
-  select(-dislikes)
-
-march_2021_table <- march_2021_videos |>
+### Data frame and table organizing the videos by date, focusing on 2021
+videos_2021 <- rpp_eff_df |>
+  filter(publish_date >= as_date("2021-01-01") & publish_date <= as_date("2021-12-31")) 
+  
+videos_2021_table <- videos_2021 |>
   mutate(publish_date = as.character(publish_date)) |>
   gt() |>
   tab_header(
-    title = "Data March 2021 Videos"
+    title = "2021 Videos"
   )|>
   data_color(columns = publish_date,
-             rows = starts_with("2021-03-06"),
+             rows = str_detect(publish_date, regex(
+               "2021-03-09|2021-03-10|2021-05-04|2021-05-05|2021-05-07|2021-07-06|2021-07-16:2021-08-06"
+               )),
              direction = "row",
              target_columns = NULL,
              method = "auto",
-             palette = "yellow")
-march_2021_table
+             palette = "viridis")
+videos_2021_table
 
 ### Data frame and table with the statistics
-stat_summ_df <- summary(video_data) |>
+summary(rpp_eff_df)
+
+stat_summ_df <- summary(rpp_eff_df) |>
   as.data.frame.matrix() |>
-  as_tibble()|>
-  select(-c("  channel", "  Program"))
+  as_tibble()
 
 colnames(stat_summ_df) <- gsub("^\\s+", "", colnames(stat_summ_df))
 
 stat_summ_df <- stat_summ_df |>
-  rename(videos = title)
+  select(-c(Title, Description))
 
 gt_table <- stat_summ_df |>
   gt() |>
   tab_header(
-    title = "Video Statistics Summary"
+    title = "RPP Video Statistics Summary"
   ) |>
   cols_label(
     publish_date = "Publish Date",
-    videos = "Videos",
-    views = "Views",
-    comments = "Comments",
-    likes = "Likes",
-    dislikes = "Dislikes"
+    ID = "Videos",
   ) |>
   cols_move_to_start(
-    columns = c(videos)
+    columns = c(ID)
   )
 gt_table
 
 ### Plotting number of views by date and program
-video_data |> ggplot(aes(x = publish_date, y = views, color = Program, group = Program)) + 
-  geom_jitter() +
-  labs(title = "Video View Count", x = "Date", y = "Views") +
+rpp_eff_df |> ggplot(aes(x = publish_date, y = Views)) + 
+  geom_point(size=0.75) +
+  labs(title = "Video View Count (Oct. '20 - Sep. '22)", x = "Date", y = "Views") +
   theme_minimal(base_size = 10) +
   theme(
     title = element_text(size=15),
@@ -164,17 +171,37 @@ video_data |> ggplot(aes(x = publish_date, y = views, color = Program, group = P
     legend.position = "bottom",  
     legend.title = element_blank(),  # Remove legend title
     axis.text.x = element_text(size = 7),
-    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
-    #panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
+    #panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
     aspect.ratio = 1/3  # Set aspect ratio for wider plot
   ) +
-  scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
-  scale_y_continuous(labels = label_comma())  
+  scale_x_date(date_labels = "%m/%y", date_breaks = "1 month") +
+  scale_y_continuous(labels = label_comma())
+
+
+videos_2021 |> ggplot(aes(x = publish_date, y = Views)) + 
+  geom_point(size=0.75) +
+  labs(title = "Video View Count (2021)", x = "Date", y = "Views") +
+  theme_minimal(base_size = 10) +
+  theme(
+    title = element_text(size=15),
+    axis.title = element_text(color = "darkgrey"),
+    legend.position = "bottom",  
+    legend.title = element_blank(),  # Remove legend title
+    axis.text.x = element_text(size = 7),
+    #panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
+    aspect.ratio = 1/3  # Set aspect ratio for wider plot
+  ) +
+  scale_x_date(date_labels = "%b", date_breaks = "1 month") +
+  scale_y_continuous(labels = label_comma())
+
+
 
 ### Plotting number of comments by date and program
-video_data |> ggplot(aes(x = publish_date, y = comments, color = Program, group = Program)) + 
-  geom_jitter() +
-  labs(title = "Video Comment Count", x = "Date", y = "Comments") +
+rpp_eff_df |> ggplot(aes(x = publish_date, y = Comments)) + 
+  geom_point(size=0.75) +
+  labs(title = "Video Comment Count (Oct. '20 - Sep. '22)", x = "Date", y = "Comments") +
   theme_minimal(base_size = 10) +
   theme(
     title = element_text(size=15),
@@ -186,12 +213,48 @@ video_data |> ggplot(aes(x = publish_date, y = comments, color = Program, group 
     #panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
     aspect.ratio = 1/3  # Set aspect ratio for wider plot
   ) +
-  scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
+  scale_x_date(date_labels = "%m/%y", date_breaks = "2 month") +
+  scale_y_continuous(labels = label_comma())  
+
+
+videos_2021 |> ggplot(aes(x = publish_date, y = Comments)) + 
+  geom_point(size=0.75) +
+  labs(title = "Video Comment Count (2021)", x = "Date", y = "Comments") +
+  theme_minimal(base_size = 10) +
+  theme(
+    title = element_text(size=15),
+    axis.title = element_text(color = "darkgrey"),
+    legend.position = "bottom",  
+    legend.title = element_blank(),  # Remove legend title
+    axis.text.x = element_text(size = 7),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    #panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
+    aspect.ratio = 1/3  # Set aspect ratio for wider plot
+  ) +
+  scale_x_date(date_labels = "%m/%y", date_breaks = "1 month") +
   scale_y_continuous(labels = label_comma())  
 
 ### Plotting number of likes by date and program
-video_data |> ggplot(aes(x = publish_date, y = likes, color = Program, group = Program)) + 
-  geom_jitter() +
+rpp_eff_df |> ggplot(aes(x = publish_date, y = Likes)) + 
+  geom_point(size=0.75) +
+  labs(title = "Video Like Count (Oct. '20 - Sep. '22)", x = "Date", y = "Likes") +
+  theme_minimal(base_size = 10) +
+  theme(
+    title = element_text(size=15),
+    axis.title = element_text(color = "darkgrey"),
+    legend.position = "bottom",  
+    legend.title = element_blank(),  # Remove legend title
+    axis.text.x = element_text(size = 7),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    #panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
+    aspect.ratio = 1/3  # Set aspect ratio for wider plot
+  ) +
+  scale_x_date(date_labels = "%m/%y", date_breaks = "2 month") +
+  scale_y_continuous(labels = label_comma()) 
+
+
+videos_2021 |> ggplot(aes(x = publish_date, y = Likes)) + 
+  geom_point(size=0.75) +
   labs(title = "Video Like Count", x = "Date", y = "Likes") +
   theme_minimal(base_size = 10) +
   theme(
@@ -204,8 +267,10 @@ video_data |> ggplot(aes(x = publish_date, y = likes, color = Program, group = P
     #panel.grid.minor.x = element_blank(),  # Remove minor vertical grid lines
     aspect.ratio = 1/3  # Set aspect ratio for wider plot
   ) +
-  scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
+  scale_x_date(date_labels = "%m/%y", date_breaks = "1 month") +
   scale_y_continuous(labels = label_comma()) 
+
+
 
 ### ***Case Study*** ###
 
