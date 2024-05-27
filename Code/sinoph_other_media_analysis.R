@@ -88,29 +88,30 @@ views_table
 # views_table_tail
 
 ### Data frame and table organizing the videos by date, focusing on 2021
-videos_2021 <- rpp_eff_df |>
+videos_2021 <- other_media |>
   filter(publish_date >= as_date("2021-01-01") & publish_date <= as_date("2021-12-31")) 
   
 videos_2021_table <- videos_2021 |>
+  mutate(publish_date = as_date(publish_date)) |>
   mutate(publish_date = as.character(publish_date)) |>
   gt() |>
   tab_header(
     title = "2021 Videos"
   )|>
-  data_color(columns = publish_date,
+  data_color(columns = everything(),
              rows = str_detect(publish_date, regex(
-               "2021-03-09|2021-03-10|2021-05-04|2021-05-05|2021-05-07|2021-07-06|2021-07-16:2021-08-06"
+               "2021-03-09|2021-03-10|2021-05-04|2021-05-06|2021-07-23|2021-08-04|2021-08-05|2021-08-06"
                )),
              direction = "row",
              target_columns = NULL,
              method = "auto",
-             palette = "viridis")
+             palette = "lightgreen")
 videos_2021_table
 
 ### Data frame and table with the statistics
-summary(rpp_eff_df)
+summary(other_media)
 
-stat_summ_df <- summary(rpp_eff_df) |>
+stat_summ_df <- summary(other_media) |>
   as.data.frame.matrix() |>
   as_tibble()
 
@@ -119,19 +120,19 @@ colnames(stat_summ_df) <- gsub("^\\s+", "", colnames(stat_summ_df))
 stat_summ_df <- stat_summ_df |>
   select(-c(Title, Description))
 
-gt_table <- stat_summ_df |>
-  gt() |>
-  tab_header(
-    title = "RPP Video Statistics Summary"
-  ) |>
-  cols_label(
-    publish_date = "Publish Date",
-    ID = "Videos",
-  ) |>
-  cols_move_to_start(
-    columns = c(ID)
-  )
-gt_table
+# gt_table <- stat_summ_df |>
+#   gt() |>
+#   tab_header(
+#     title = "RPP Video Statistics Summary"
+#   ) |>
+#   cols_label(
+#     publish_date = "Publish Date",
+#     ID = "Videos",
+#   ) |>
+#   cols_move_to_start(
+#     columns = c(ID)
+#   )
+# gt_table
 
 ### Plotting number of views by date and program
 rpp_eff_df |> ggplot(aes(x = publish_date, y = Views)) + 

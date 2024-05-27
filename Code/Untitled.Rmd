@@ -1,9 +1,46 @@
-# install.packages("tidyverse")
-# install.packages("pacman")
-# install.packages("lubridate")
-# install.packages("scale")
-# install.packages("jsonlite")
+---
+title: "Sinoph disinfo"
+author: "JC De Orellana Sanchez"
+date: "`r Sys.Date()`"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This code preprocess and cleans the data. It
+1. Opens json files containing dictionaries with video metadata downloaded
+  from YouTube.
+2. Converts dates in UNIX format into regular `Date` format and counts from 
+  `character` into numeric format.
+3. Creates the program column and fills it with the program titles extracted from
+  the video_title data downloaded from the API. If video_title does not contain 
+  the program name, it insters NA.
+4. Standardizes the programs' names and cleans the titles by extracting the program 
+  name
+5. Creates a dataframe to analyze and visualize the data using ggplot
+6. Replaces NAs in the program columns with the manually found show names 
+7. Creates a .csv file with the dataframe.
+
+The code after takes the df created above and creates 3 scatter-plots. It 
+8. Uses geom_jitter to counter point overlap. 
+9. Create 3 separate plots to visualize the number of views, likes, and comments
+  that the anti-Sinopharm malinformation videos received
+10. Selects video of March 5 2021 as a case study
+11. Loads the comments and related metadata into a dataframe
+12. Saves dataframe for hand-coding using a 0-3 scale (0 = Neurtral, 
+    1 = In-line politically, 2 = In-line w/Sinopharm disinfo, 3 = Against video)
+13 Loads hand-coded file
+
+### TO DO: 
+Keep parsing the vide_title metadata to extract the dates in which the 
+programs were aired and keep the title column only with the video titles
+
+
+```{r}
 library(jsonlite)
 library(tidyverse)
 library(pacman)
@@ -12,33 +49,6 @@ library(stringr)
 library(scales)
 library(gt)
 
-# This code preprocess and cleans the data. It
-# 1. Opens json files containing dictionaries with video metadata downloaded
-#   from YouTube.
-# 2. Converts dates in UNIX format into regular `Date` format and counts from 
-#   `character` into numeric format.
-# 3. Creates the program column and fills it with the program titles extracted from
-#   the video_title data downloaded from the API. If video_title does not contain 
-#   the program name, it insters NA.
-# 4. Standardizes the programs' names and cleans the titles by extracting the program 
-#   name
-# 5. Creates a dataframe to analyze and visualize the data using ggplot
-# 6. Replaces NAs in the program columns with the manually found show names 
-# 7. Creates a .csv file with the dataframe.
-
-# The code after takes the df created above and creates 3 scatter-plots. It 
-# 8. Uses geom_jitter to counter point overlap. 
-# 9. Create 3 separate plots to visualize the number of views, likes, and comments
-#   that the anti-Sinopharm malinformation videos received
-# 10. Selects video of March 5 2021 as a case study
-# 11. Loads the comments and related metadata into a dataframe
-# 12. Saves dataframe for hand-coding using a 0-3 scale (0 = Neurtral, 
-#     1 = In-line politically, 2 = In-line w/Sinopharm disinfo, 3 = Against video)
-# 13 Loads hand-coded file
-
-# TO DO: 
-# Keep parsing the vide_title metadata to extract the dates in which the 
-# programs were aired and keep the title column only with the video titles
 
 # Load data
 file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
@@ -421,3 +431,15 @@ comm_freq_tbl <- commenter_frequencies |>
   )
 comm_freq_tbl
 
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
