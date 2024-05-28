@@ -1,9 +1,46 @@
-# install.packages("tidyverse")
-# install.packages("pacman")
-# install.packages("lubridate")
-# install.packages("scale")
-# install.packages("jsonlite")
+---
+title: "Sinoph disinfo"
+author: "JC De Orellana Sanchez"
+date: "`r Sys.Date()`"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Content
+
+This code preprocess and cleans the data. It
+1. Opens json files containing dictionaries with video metadata downloaded
+  from YouTube.
+2. Converts dates in UNIX format into regular `Date` format and counts from 
+  `character` into numeric format.
+3. Creates the program column and fills it with the program titles extracted from
+  the video_title data downloaded from the API. If video_title does not contain 
+  the program name, it insters NA.
+4. Standardizes the programs' names and cleans the titles by extracting the program 
+  name
+5. Creates a dataframe to analyze and visualize the data using ggplot
+6. Replaces NAs in the program columns with the manually found show names 
+7. Creates a .csv file with the dataframe.
+
+The code after takes the df created above and creates 3 scatter-plots. It 
+8. Uses geom_jitter to counter point overlap. 
+9. Create 3 separate plots to visualize the number of views, likes, and comments
+  that the anti-Sinopharm malinformation videos received
+10. Selects video of March 5 2021 as a case study
+11. Loads the comments and related metadata into a dataframe
+12. Saves dataframe for hand-coding using a 0-3 scale (0 = Neurtral, 
+    1 = In-line politically, 2 = In-line w/Sinopharm disinfo, 3 = Against video)
+13 Loads hand-coded file
+
+### TO DO: 
+Keep parsing the vide_title metadata to extract the dates in which the 
+programs were aired and keep the title column only with the video titles
+
+
+```{r, include=FALSE}
 library(jsonlite)
 library(tidyverse)
 library(pacman)
@@ -12,36 +49,13 @@ library(stringr)
 library(scales)
 library(gt)
 
-# This code preprocess and cleans the data. It
-# 1. Opens json files containing dictionaries with video metadata downloaded
-#   from YouTube.
-# 2. Converts dates in UNIX format into regular `Date` format and counts from 
-#   `character` into numeric format.
-# 3. Creates the program column and fills it with the program titles extracted from
-#   the video_title data downloaded from the API. If video_title does not contain 
-#   the program name, it insters NA.
-# 4. Standardizes the programs' names and cleans the titles by extracting the program 
-#   name
-# 5. Creates a dataframe to analyze and visualize the data using ggplot
-# 6. Replaces NAs in the program columns with the manually found show names 
-# 7. Creates a .csv file with the dataframe.
+video_data <- rio::import("../data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo_long.csv")
+```
 
-# The code after takes the df created above and creates 3 scatter-plots. It 
-# 8. Uses geom_jitter to counter point overlap. 
-# 9. Create 3 separate plots to visualize the number of views, likes, and comments
-#   that the anti-Sinopharm malinformation videos received
-# 10. Selects video of March 5 2021 as a case study
-# 11. Loads the comments and related metadata into a dataframe
-# 12. Saves dataframe for hand-coding using a 0-3 scale (0 = Neurtral, 
-#     1 = In-line politically, 2 = In-line w/Sinopharm disinfo, 3 = Against video)
-# 13 Loads hand-coded file
-
-# TO DO: 
-# Keep parsing the vide_title metadata to extract the dates in which the 
-# programs were aired and keep the title column only with the video titles
+``` {r, eval=FALSE}
 
 # Load data
-file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
+# file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo.json")
 
 # Create df. Data preprocess and cleaning
 # video_data <- file_path |>
@@ -104,11 +118,11 @@ file_path <- rio::import("data/willax_pbo_youtube_vids/sinoph_pbo_willax_disinfo
 
 # Create a .csv file with the dataframe
 #write.csv(video_data, "data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo_long.csv", row.names = FALSE)
+```
 
-video_data <- rio::import("data/willax_pbo_youtube_vids/df_sinoph_pbo_willax_disinfo_long.csv")
+### Table organizing the 2020 - 2021 videos by date
+```{r, echo=FALSE}
 
-
-### Data frame and table organizing the 2020 - 2021 videos by date
 videos_wilpbo <- video_data |>
   filter(video_publish_date >= as_date("2020-10-01") & video_publish_date <= as_date("2021-12-31")) |> 
   mutate(channel_title = str_replace_all(channel_title,
@@ -123,14 +137,16 @@ videos_wilpbo <- video_data |>
          Likes = video_like_count,
          Comments = video_comment_count) |>
   arrange(Published, Aired)
-videos_wilpbo
+
+```
 
 
-date_table_head <- head(videos_wilpbo, n=20) |>
+```{r, echo=FALSE}
+date_table_head <- head(videos_wilpbo, n=23) |>
   mutate(Published = as.factor(Published)) |>
   gt() |>
   tab_header(
-    title = "Total of views per video (tail)"
+    title = "Videos Oct.'20 - Dec. '21"
   )|>
   data_color(columns = c(Published, Views),
              direction = "row",
@@ -141,9 +157,31 @@ date_table_head <- head(videos_wilpbo, n=20) |>
              ordered = FALSE,
              reverse = FALSE)
 date_table_head
-
+```
+### Table with first videos of 2021 about the COVID vaccine 
+```{r, echo=FALSE}
+vids_2021 <- videos_wilpbo |>
+  filter(Published >= as_date("2021-01-01") & Published <= as_date("2021-12-31")) |>
+  head(n=20) |>
+  mutate(Published = as.factor(Published)) |>
+  gt() |>
+  tab_header(
+    title = "Videos 2021 (first 20)
+    )"
+  )|>
+  data_color(columns = c(Published, Views),
+             direction = "row",
+             target_columns = NULL,
+             method = "auto",
+             bins = 4,
+             quantiles = 4,
+             ordered = FALSE,
+             reverse = FALSE)
+vids_2021
+```
 
 ### Data frame and table organizing the videos by views 
+``` {r, echo=FALSE}
 views_df <- videos_wilpbo |>
   arrange(desc(Views))
 
@@ -165,8 +203,9 @@ views_table_top <- views_df_sliced |>
              ordered = FALSE,
              reverse = TRUE)
 views_table_top
+```
 
-
+```{r, echo=FALSE}
 views_table_tail <- tail(views_df, n=12) |>
   mutate(Published = as.factor(Published)) |>
   gt() |>
@@ -182,9 +221,11 @@ views_table_tail <- tail(views_df, n=12) |>
              ordered = FALSE,
              reverse = FALSE)
 views_table_tail
-
+```
 
 ### Data frame and table organizing the videos by date, focusing on March
+
+```{r, echo=FALSE}
 march_2021_videos <- videos_wilpbo |>
   filter(Published >= as_date("2021-03-01") & Published <= as_date("2021-03-31")) |> 
   arrange(Published, Aired)
@@ -203,17 +244,20 @@ march_2021_table <- march_2021_videos |>
              method = "auto",
              palette = "yellow")
 march_2021_table
-
+```
 ### Data frame and table with the statistics
-stat_summ_df <- summary(video_data) |>
+
+```{r, echo=FALSE}
+stat_summ_df <- summary(videos_wilpbo) |>
   as.data.frame.matrix() |>
-  as_tibble()|>
-  select(-c("  channel", "  program"))
+  as_tibble()#|>
+  
 
 colnames(stat_summ_df) <- gsub("^\\s+", "", colnames(stat_summ_df))
 
 stat_summ_df <- stat_summ_df |>
-  rename(videos = title)
+  rename(Videos = "Title") |>
+  select(-c(Channel, Program, Aired))
 
 gt_table <- stat_summ_df |>
   gt() |>
@@ -221,20 +265,22 @@ gt_table <- stat_summ_df |>
     title = "Video Statistics Summary"
   ) |>
   cols_label(
-    publish_date = "Publish Date",
-    videos = "Videos",
-    views = "Views",
-    comments = "Comments",
-    likes = "Likes",
-    dislikes = "Dislikes"
+    Published = "Publish Date",
+    Videos = "Videos",
+    Views = "Views",
+    Comments = "Comments",
+    Likes = "Likes"
   ) |>
   cols_move_to_start(
-    columns = c(videos)
+    columns = c(Videos)
   )
 gt_table
+```
 
 ### Plotting number of views by date and program
-video_data |> ggplot(aes(x = publish_date, y = views, color = program, group = program)) + 
+
+```{r, echo=FALSE}
+videos_wilpbo |> ggplot(aes(x = Published, y = Views, color = Program, group = Program)) + 
   geom_jitter() +
   labs(title = "Video View Count", x = "Date", y = "Views") +
   theme_minimal(base_size = 10) +
@@ -250,9 +296,11 @@ video_data |> ggplot(aes(x = publish_date, y = views, color = program, group = p
   ) +
   scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
   scale_y_continuous(labels = label_comma())  
+```
 
 ### Plotting number of comments by date and program
-video_data |> ggplot(aes(x = publish_date, y = comments, color = program, group = program)) + 
+```{r, echo=FALSE}
+videos_wilpbo |> ggplot(aes(x = Published, y = Comments, color = Program, group = Program)) + 
   geom_jitter() +
   labs(title = "Video Comment Count", x = "Date", y = "Comments") +
   theme_minimal(base_size = 10) +
@@ -268,9 +316,11 @@ video_data |> ggplot(aes(x = publish_date, y = comments, color = program, group 
   ) +
   scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
   scale_y_continuous(labels = label_comma())  
+```
 
 ### Plotting number of likes by date and program
-video_data |> ggplot(aes(x = publish_date, y = likes, color = program, group = program)) + 
+```{r, echo=FALSE}
+videos_wilpbo |> ggplot(aes(x = Published, y = Likes, color = Program, group = Program)) + 
   geom_jitter() +
   labs(title = "Video Like Count", x = "Date", y = "Likes") +
   theme_minimal(base_size = 10) +
@@ -286,8 +336,10 @@ video_data |> ggplot(aes(x = publish_date, y = likes, color = program, group = p
   ) +
   scale_x_date(date_labels = "%b %y", date_breaks = "1 month") +
   scale_y_continuous(labels = label_comma()) 
+```
 
 ### ***Case Study*** ###
+```{r, eval=FALSE}
 
 # Loads file to create dataframe for hand coding and selects desired column
 file <- rio::import("data/willax_pbo_youtube_vids/wil_pbo_sinoph_comments.json")
@@ -417,3 +469,15 @@ comm_freq_tbl <- commenter_frequencies |>
   )
 comm_freq_tbl
 
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
